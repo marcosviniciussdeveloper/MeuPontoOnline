@@ -1,0 +1,11 @@
+.vs
+bin
+obj
+out
+Dockerfile
+docker-compose.yml
+*.user
+*.suo
+*.db
+*.log
+wwwroot/lib

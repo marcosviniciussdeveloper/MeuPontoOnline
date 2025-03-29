@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Registrar Ponto";
+}
+
+<h2>Registrar Ponto</h2>
+
+
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="tipo">Tipo de Registro</label>
+        <select asp-for="TipoRegistro" class="form-control" required>
+            <option value="">-- Selecione --</option>
+            <option>Entrada</option>
+            <option>Almoço</option>
+            <option>Retorno</option>
+            <option>Saída</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success mt-2">Registrar</button>
+</form>
+
+
+
+
+@if (Model.Mensagem != null)
+{
+    <div class="alert alert-info mt-3">@Model.Mensagem</div>
+}
+
+@if (Model.RegistroSalvo != null)
+{
+    <div class="alert alert-info mt-2">
+        Registro de @Model.RegistroSalvo.TipoRegistro às @Model.RegistroSalvo.DataHora.ToLocalTime().ToString("HH:mm:ss")
+    </div>
+}
