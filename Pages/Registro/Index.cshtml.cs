@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MeuPontoOnline.Data;
 using MeuPontoOnline.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeuPontoOnline.Pages.Registro
 {
@@ -18,6 +19,8 @@ namespace MeuPontoOnline.Pages.Registro
 
         [BindProperty]
         public string? TipoRegistro { get; set; }
+        [BindProperty]
+        public string? CodigoIdentificacao { get; set; }
 
         public RegistroPonto? RegistroSalvo { get; set; }
         public string? Mensagem { get; set; }
@@ -34,12 +37,24 @@ namespace MeuPontoOnline.Pages.Registro
                 return Page();
             }
 
-            // TEMPORÁRIO - substituir pela lógica de login no futuro
-            int funcionarioId = 1;
+            if (string.IsNullOrEmpty(CodigoIdentificacao))
+            {
+                Mensagem = "Informe o código de identificação.";
+                return Page();
+            }
+
+            var funcionario = await _context.Funcionarios.
+                FirstOrDefaultAsync(f => f.CodigoIndetificacao == CodigoIdentificacao);
+
+            if (funcionario == null)
+            {
+                Mensagem = "Funcionário não encontrado.";
+                return Page();
+            }
 
             var registro = new RegistroPonto
             {
-                FuncionarioId = funcionarioId,
+                FuncionarioId = funcionario.Id,
                 TipoRegistro = TipoRegistro,
                 DataHora = DateTime.UtcNow,
                 Observacao = ""

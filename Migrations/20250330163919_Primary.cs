@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MeuPontoOnline.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Primary : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,6 +48,7 @@ namespace MeuPontoOnline.Migrations
                     nome = table.Column<string>(type: "text", nullable: false),
                     email = table.Column<string>(type: "text", nullable: false),
                     senha_hash = table.Column<string>(type: "text", nullable: false),
+                    codigo_indetificacao = table.Column<string>(type: "text", nullable: false),
                     tipo_contrato = table.Column<string>(type: "text", nullable: false),
                     setor_id = table.Column<int>(type: "integer", nullable: false),
                     funcao_id = table.Column<int>(type: "integer", nullable: false),

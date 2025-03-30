@@ -147,7 +147,6 @@ C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\obj\Debug\net8.0\refint\M
 C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\obj\Debug\net8.0\MeuPontoOnline.pdb
 C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\obj\Debug\net8.0\MeuPontoOnline.genruntimeconfig.cache
 C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\obj\Debug\net8.0\ref\MeuPontoOnline.dll
-C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\MeuPontoOnline\bin\Debug\net8.0\out\web.config
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\MeuPontoOnline\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\MeuPontoOnline\bin\Debug\net8.0\appsettings.json

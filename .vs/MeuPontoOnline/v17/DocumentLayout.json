@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\mv834\\desktop\\sistema_de_ponto\\meupontoonline\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\mv834\\desktop\\sistema_de_ponto\\meupontoonline\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 189,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1109096346:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1109055098:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Models\\Funcionario.cs",
+              "RelativeDocumentMoniker": "Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Models\\Funcionario.cs",
+              "RelativeToolTip": "Models\\Funcionario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:34:35.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:34:20.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

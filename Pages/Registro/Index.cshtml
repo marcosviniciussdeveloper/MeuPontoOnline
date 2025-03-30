@@ -1,13 +1,11 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Registrar Ponto";
 }
 
 <h2>Registrar Ponto</h2>
-
-
-
 
 <form method="post">
     <div class="form-group">
@@ -20,11 +18,14 @@
             <option>Saída</option>
         </select>
     </div>
+
+    <div class="form-group mt-2">
+        <label for="codigo">Código de Identificação</label>
+        <input asp-for="CodigoIdentificacao" class="form-control" placeholder="Digite o seu código de identificação" required />
+        <span asp-validation-for="CodigoIdentificacao" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-success mt-2">Registrar</button>
 </form>
-
-
-
 
 @if (Model.Mensagem != null)
 {
@@ -36,4 +37,8 @@
     <div class="alert alert-info mt-2">
         Registro de @Model.RegistroSalvo.TipoRegistro às @Model.RegistroSalvo.DataHora.ToLocalTime().ToString("HH:mm:ss")
     </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

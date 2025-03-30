@@ -1,7 +1,6 @@
-﻿@page "/cadastro"
+﻿@page "/Cadastro"
 @model MeuPontoOnline.Pages.CadastroUsuarios.CadastroModel
-
-
+@using Microsoft.AspNetCore.Mvc.Rendering
 
 @{
     ViewData["Title"] = "Cadastro de Funcionário";
@@ -10,38 +9,50 @@
 <h2>Cadastro de Funcionário</h2>
 
 <form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div class="form-group">
         <label>Nome</label>
         <input asp-for="NovoFuncionario.Nome" class="form-control" required />
     </div>
+
     <div class="form-group">
         <label>Tipo de Contrato</label>
         <input asp-for="NovoFuncionario.TipoContrato" class="form-control" />
     </div>
+
     <div class="form-group">
         <label>Setor</label>
         <select asp-for="NovoFuncionario.SetorId" asp-items="Model.ListaDeSetores" class="form-control">
+
+
             <option value="">-- Selecione o Setor --</option>
         </select>
     </div>
+
     <div class="form-group">
         <label>Função</label>
-        <input asp-for="Funcaonome"  class="form-control" required />
-        <option value="">--Selecione a função</option>
+        <input asp-for="FuncaoNome" class="form-control" required />
     </div>
 
     <div class="form-group">
         <label>Email</label>
         <input asp-for="NovoFuncionario.Email" class="form-control" type="email" required />
     </div>
+
     <div class="form-group">
         <label>Senha</label>
         <input asp-for="Senha" class="form-control" type="password" required />
     </div>
+
     <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
 </form>
 
 @if (Model.Mensagem != null)
 {
     <div class="alert alert-success mt-2">@Model.Mensagem</div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

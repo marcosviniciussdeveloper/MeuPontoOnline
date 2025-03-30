@@ -54,6 +54,11 @@ namespace MeuPontoOnline.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CodigoIndetificacao")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("codigo_indetificacao");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text")

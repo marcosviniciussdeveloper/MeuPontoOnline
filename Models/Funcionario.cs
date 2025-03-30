@@ -20,6 +20,9 @@ namespace MeuPontoOnline.Models
         [Column("senha_hash")]
         public string SenhaHash { get; set; } = string.Empty;
 
+        [Column("codigo_indetificacao")]
+        public string CodigoIndetificacao { get; set; } = string.Empty;
+
         [Column("tipo_contrato")]
         public string TipoContrato { get; set; } = string.Empty;
 

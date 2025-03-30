@@ -8,75 +8,81 @@ using System.Text;
 
 namespace MeuPontoOnline.Pages.CadastroUsuarios
 {
-    public class CadastroModel(AppDbContext context) : PageModel
+    public class CadastroModel : PageModel
     {
-        private readonly AppDbContext _context = context;
+        private readonly AppDbContext _context;
+
+        public CadastroModel(AppDbContext context)
+        {
+            _context = context;
+        }
 
         [BindProperty]
-        public required Funcionario NovoFuncionario { get; set; }
-        public string? Senha { get; set; }
+        public Funcionario NovoFuncionario { get; set; } = new();
 
-        public string Funcaonome { get; set; } = String.Empty;
-        public string? Mensagem { get; set; }
+        [BindProperty]
+        public string Senha { get; set; } = string.Empty;
 
-        public List<SelectListItem> ListaDeSetores { get; set; } = [];
+        [BindProperty]
+        public string FuncaoNome { get; set; } = string.Empty;
 
-        public void OnGet()
+        public List<SelectListItem>
+    ListaDeSetores { get; set; } = new();
+
+    public string Mensagem { get; set; } = string.Empty;
+
+    public void OnGet()
+    {
+    CarregarSetores();
+    }
+
+    public async Task<IActionResult>
+        OnPostAsync()
         {
-            ListaDeSetores = _context.Setores
-                .Select(s => new SelectListItem
-                {
-                    Value = s.Id.ToString(),
-                    Text = s.Nome
-                }).ToList();
+        CarregarSetores();
+
+        if (!ModelState.IsValid)
+        return Page();
+
+        if (string.IsNullOrWhiteSpace(Senha))
+        {
+        ModelState.AddModelError("Senha", "A senha é obrigatória.");
+        return Page();
         }
-        public async Task<IActionResult> OnPostAsync()
+
+        var funcao = _context.funcoes.FirstOrDefault(f => f.Nome == FuncaoNome);
+        if (funcao == null)
         {
-            
-           var funcao =  _context.funcoes.FirstOrDefault(f=> f.Nome == Funcaonome);
+        funcao = new Funcao { Nome = FuncaoNome };
+        _context.funcoes.Add(funcao);
+        await _context.SaveChangesAsync();
+        }
 
+        NovoFuncionario.FuncaoId = funcao.Id;
+        NovoFuncionario.SenhaHash = GerarHash(Senha);
 
-            if(funcao == null)
-            {
+        _context.Funcionarios.Add(NovoFuncionario);
+        await _context.SaveChangesAsync();
 
-                funcao = new Funcao { Nome = Funcaonome };
-                _context.funcoes.Add(funcao);
-                await _context.SaveChangesAsync();
+        Mensagem = "Funcionário cadastrado com sucesso!";
+        return Page();
+        }
 
-
-
-            }
-
-            NovoFuncionario.FuncaoId = funcao.Id;
-
-            if (!ModelState.IsValid)
-            {
-                OnGet(); 
-                return Page();
-            }
-
-            if (string.IsNullOrEmpty(Senha))
-            {
-                ModelState.AddModelError("Senha", "A senha é obrigatória.");
-                OnGet(); 
-                return Page();
-            }
-
-            NovoFuncionario.SenhaHash = GerarHash(Senha);
-            _context.Funcionarios.Add(NovoFuncionario);
-            await _context.SaveChangesAsync();
-
-            Mensagem = "Funcionário cadastrado com sucesso!";
-
-            OnGet(); 
-            return Page();
+        private void CarregarSetores()
+        {
+        ListaDeSetores = _context.Setores
+        .Select(s => new SelectListItem
+        {
+        Value = s.Id.ToString(),
+        Text = s.Nome
+        }).ToList();
         }
 
         private string GerarHash(string senha)
         {
-            using var sha256 = SHA256.Create();
-            var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
-            return Convert.ToBase64String(hashBytes);
+        using var sha256 = SHA256.Create();
+        var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
+        return Convert.ToBase64String(hashBytes);
         }
-    }
-}
+        }
+        }

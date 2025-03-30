@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MeuPontoOnline.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250324192924_initial")]
-    partial class initial
+    [Migration("20250330163919_Primary")]
+    partial class Primary
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,11 @@ namespace MeuPontoOnline.Migrations
                         .HasColumnName("id");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CodigoIndetificacao")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("codigo_indetificacao");
 
                     b.Property<string>("Email")
                         .IsRequired()
