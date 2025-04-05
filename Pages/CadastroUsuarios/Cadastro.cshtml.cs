@@ -1,8 +1,9 @@
-using MeuPontoOnline.Data;
 using MeuPontoOnline.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Supabase;
+
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,11 +11,11 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
 {
     public class CadastroModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly Client _supabase;
 
-        public CadastroModel(AppDbContext context)
+        public CadastroModel(Client supabase)
         {
-            _context = context;
+            _supabase = supabase;
         }
 
         [BindProperty]
@@ -27,62 +28,89 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
         public string FuncaoNome { get; set; } = string.Empty;
 
         public List<SelectListItem>
-    ListaDeSetores { get; set; } = new();
+    ListaDeSetores
+        { get; set; } = new();
 
-    public string Mensagem { get; set; } = string.Empty;
+        public string Mensagem { get; set; } = string.Empty;
 
-    public void OnGet()
-    {
-    CarregarSetores();
-    }
-
-    public async Task<IActionResult>
-        OnPostAsync()
+        public async Task OnGetAsync()
         {
-        CarregarSetores();
-
-        if (!ModelState.IsValid)
-        return Page();
-
-        if (string.IsNullOrWhiteSpace(Senha))
-        {
-        ModelState.AddModelError("Senha", "A senha é obrigatória.");
-        return Page();
+            await CarregarSetores();
         }
 
-        var funcao = _context.funcoes.FirstOrDefault(f => f.Nome == FuncaoNome);
-        if (funcao == null)
-        {
-        funcao = new Funcao { Nome = FuncaoNome };
-        _context.funcoes.Add(funcao);
-        await _context.SaveChangesAsync();
+        public async Task<IActionResult>
+            OnPostAsync()
+
+        { 
+
+
+
+
+
+            if (!ModelState.IsValid)
+                return Page();
+
+            if (string.IsNullOrWhiteSpace(Senha))
+            {
+                ModelState.AddModelError("Senha", "A senha é obrigatória.");
+                return Page();
+            }
+
+            var funcoes = await _supabase
+              .From<Funcao>()
+               .Where(f => f.Nome == FuncaoNome)
+                .Get();
+
+
+            var funcao = funcoes.Models.FirstOrDefault();
+
+            if (funcao == null)
+            {
+                funcao = new Funcao { Nome = FuncaoNome };
+                var result = await _supabase.From<Funcao>().Insert(funcao);
+
+                funcao = result.Models.First();
+            }
+
+
+            NovoFuncionario.FuncaoId = funcao.Id;
+            NovoFuncionario.SenhaHash = GerarHash(Senha);
+
+            await _supabase
+            .From<Funcionario>()
+            .Insert(NovoFuncionario);
+
+
+
+            Mensagem = "Funcionário cadastrado com sucesso!";
+
+
+            return Page();
+
         }
 
-        NovoFuncionario.FuncaoId = funcao.Id;
-        NovoFuncionario.SenhaHash = GerarHash(Senha);
 
-        _context.Funcionarios.Add(NovoFuncionario);
-        await _context.SaveChangesAsync();
 
-        Mensagem = "Funcionário cadastrado com sucesso!";
-        return Page();
-        }
-
-        private void CarregarSetores()
+        private async Task CarregarSetores()
         {
-        ListaDeSetores = _context.Setores
-        .Select(s => new SelectListItem
-        {
-        Value = s.Id.ToString(),
-        Text = s.Nome
-        }).ToList();
+            var setores = await _supabase.From<Setor>().Get();
+
+            ListaDeSetores = setores.Models.Select(s => new SelectListItem
+            {
+                Text = s.Nome,
+                Value = s.Id.ToString(),
+
+
+            }).ToList();
+
+
         }
 
         private string GerarHash(string senha)
         {
-        using var sha256 = SHA256.Create();
-        var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
-        return Convert.ToBase64String(hashBytes);
+            using var sha256 = SHA256.Create();
+            var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
+            return Convert.ToBase64String(hashBytes);
         }
-        }
-        }
+    }
+}

@@ -1,14 +1,17 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿
+using Newtonsoft.Json;
+using Supabase.Postgrest;
+using Supabase.Postgrest.Attributes;
+using Supabase.Postgrest.Models;
+using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
+using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
 
 namespace MeuPontoOnline.Models
 {
     [Table("funcionarios")]
-    public class Funcionario
+    public class Funcionario : BaseModel
     {
-        [Key]
-        [Column("id")]
+        [PrimaryKey("Id")]
         public int Id { get; set; }
 
         [Column("nome")]
@@ -26,25 +29,23 @@ namespace MeuPontoOnline.Models
         [Column("tipo_contrato")]
         public string TipoContrato { get; set; } = string.Empty;
 
-        [ForeignKey("Setor")]
         [Column("setor_id")]
         public int SetorId { get; set; }
+
+        [JsonIgnore]
         public Setor? Setor { get; set; }
 
-        [ForeignKey("Funcao")]
-        [Column("funcao_id")]
-        public int FuncaoId { get; set; }
+        [JsonIgnore]
         public Funcao? Funcao { get; set; }
 
+        [Column("funcao_id")]
+        public int FuncaoId { get; set; }
+
+   
         [Column("horario_entrada")]
         public TimeSpan HorarioEntrada { get; set; }
 
         [Column("horario_saida")]
         public TimeSpan HorarioSaida { get; set; }
-
-        public static implicit operator Funcionario(Funcao v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

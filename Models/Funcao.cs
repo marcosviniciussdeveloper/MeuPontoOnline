@@ -1,13 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿
+
+using AutoMapper.Configuration.Annotations;
+using Newtonsoft.Json;
+using Supabase.Postgrest.Attributes;
+using Supabase.Postgrest.Models;
+using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
+using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
 
 namespace MeuPontoOnline.Models
 {
-    [Table("funcoes")]
-    public class Funcao
+    [Table("Funcao")]
+    public class Funcao : BaseModel
     {
-        [Key]
-        [Column("id")]
+        [PrimaryKey("Id")]
+     
         public int Id { get; set; }
 
         [Column("nome")]
@@ -16,6 +22,8 @@ namespace MeuPontoOnline.Models
         [Column("descricao")]
         public string? Descricao { get; set; }
 
+
+        [JsonIgnore]
         public ICollection<Funcionario>? Funcionarios { get; set; }
     }
 }

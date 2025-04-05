@@ -1,32 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using MeuPontoOnline.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using Supabase.Postgrest.Models;
+using Supabase.Postgrest.Attributes;
+using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
+using TableAttribute = System.ComponentModel.DataAnnotations.Schema.TableAttribute;
+using Newtonsoft.Json;
 
-namespace MeuPontoOnline.Models
+[Table("registro_ponto")]
+public class RegistroPonto : BaseModel
 {
+    [PrimaryKey("id")]
+    
+    public int Id { get; set; }
 
-    [Table("registro_ponto")]
-    public class RegistroPonto
-    {
-      [Key]
-        [Column("id")]
-        public int Id { get; set; }
+    [ForeignKey("Funcionario")]
+    [Column("funcionario_id")]
+    public int FuncionarioId { get; set; }
 
-        [Column("funcioario_id")] // Chave estrangeira
-        public int FuncionarioId { get; set; }
+    [Column("data_hora")]
+    public DateTime DataHora { get; set; }
 
-        [Column("data_hora")]
-        public DateTime DataHora { get; set; }
+    [Column("tipo_registro")]
+    public string? TipoRegistro { get; set; }
 
-        [Column("tipo_registro")]
-        public string? TipoRegistro { get; set; }
-
-       [Column("Observacao")]
-        public string? Observacao { get; set; }
-
-        public Funcionario Fucionario { get; set; } = null!; // Propriedade de navegação
-
-
-
-    }
-}
+    [Column("observacao")]
+    public string? Observacao { get; set; }
+    
+   // [JsonIgnore]
+   // public Funcionario Funcionario { get; set; } = null!;
+}//

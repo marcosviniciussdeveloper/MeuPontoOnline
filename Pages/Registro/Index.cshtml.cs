@@ -1,21 +1,21 @@
+using MeuPontoOnline.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MeuPontoOnline.Data;
-using MeuPontoOnline.Models;
-using Microsoft.EntityFrameworkCore;
+using Supabase;
 
 namespace MeuPontoOnline.Pages.Registro
 {
     public class IndexModel : PageModel
     {
-        private readonly AppDbContext _context;
-        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(AppDbContext context, ILogger<IndexModel> logger)
+        private readonly Client _supabase;
+
+        public IndexModel(Client supabase)
         {
-            _context = context;
-            _logger = logger;
+
+            _supabase = supabase;
         }
+
 
         [BindProperty]
         public string? TipoRegistro { get; set; }
@@ -24,10 +24,6 @@ namespace MeuPontoOnline.Pages.Registro
 
         public RegistroPonto? RegistroSalvo { get; set; }
         public string? Mensagem { get; set; }
-
-        public void OnGet()
-        {
-        }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -43,8 +39,13 @@ namespace MeuPontoOnline.Pages.Registro
                 return Page();
             }
 
-            var funcionario = await _context.Funcionarios.
-                FirstOrDefaultAsync(f => f.CodigoIndetificacao == CodigoIdentificacao);
+          
+            var resultado = await _supabase
+                .From<Funcionario>()
+                .Where(f => f.CodigoIndetificacao == CodigoIdentificacao)
+                .Get();
+
+            var funcionario = resultado.Models.FirstOrDefault();
 
             if (funcionario == null)
             {
@@ -52,6 +53,7 @@ namespace MeuPontoOnline.Pages.Registro
                 return Page();
             }
 
+           
             var registro = new RegistroPonto
             {
                 FuncionarioId = funcionario.Id,
@@ -60,12 +62,16 @@ namespace MeuPontoOnline.Pages.Registro
                 Observacao = ""
             };
 
-            _context.RegistroPontos.Add(registro);
-            await _context.SaveChangesAsync();
+            await _supabase
+                .From<RegistroPonto>()
+                .Insert(registro);
 
-            Mensagem = $"Registro de '{TipoRegistro}' realizado às {registro.DataHora:HH:mm:ss}";
+            Mensagem = $"Registro de '{TipoRegistro}' realizado às {registro.DataHora.ToLocalTime():HH:mm:ss}";
             RegistroSalvo = registro;
             return Page();
         }
+
     }
 }
+
+

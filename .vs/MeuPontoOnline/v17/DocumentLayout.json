@@ -1,14 +1,82 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\",
+  "WorkspaceRootPath": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\mv834\\desktop\\sistema_de_ponto\\meupontoonline\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\registro\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\registro\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\registro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\registro\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\models\\registrarponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:models\\registrarponto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\models\\funcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:models\\funcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:models\\funcionario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\mv834\\desktop\\sistema_de_ponto\\meupontoonline\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\cadastrousuarios\\cadastro.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\cadastrousuarios\\cadastro.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\cadastrousuarios\\cadastro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\cadastrousuarios\\cadastro.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\cadastrosetor\\cadastrosetor.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\cadastrosetor\\cadastrosetor.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:models\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\out\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:out\\setor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\cadastrosetor\\cadastrosetor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\cadastrosetor\\cadastrosetor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\out\\meupontoonline.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:out\\meupontoonline.dll||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\error.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\shared\\index.cshtml.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\shared\\index.cshtml.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:pages\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|c:\\users\\sindauto\\desktop\\meupontoonlinedev\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B4A658FA-3CE0-44B5-8DEB-BFAC6F33B9F9}|MeuPontoOnline.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,8 +85,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 189,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 18,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,37 +94,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1109055098:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Funcionario.cs",
-              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Models\\Funcionario.cs",
-              "RelativeDocumentMoniker": "Models\\Funcionario.cs",
-              "ToolTip": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Models\\Funcionario.cs",
-              "RelativeToolTip": "Models\\Funcionario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T16:34:35.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T16:34:20.855Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
@@ -65,6 +107,253 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Registro\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Registro\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Registro\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Registro\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T22:54:45.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-02T17:05:16.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrarPonto.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\RegistrarPonto.cs",
+              "RelativeDocumentMoniker": "Models\\RegistrarPonto.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\RegistrarPonto.cs",
+              "RelativeToolTip": "Models\\RegistrarPonto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T20:57:20.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Setor.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\out\\Setor.cs",
+              "RelativeDocumentMoniker": "out\\Setor.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\out\\Setor.cs",
+              "RelativeToolTip": "out\\Setor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T20:27:32.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Funcao.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Funcao.cs",
+              "RelativeDocumentMoniker": "Models\\Funcao.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Funcao.cs",
+              "RelativeToolTip": "Models\\Funcao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T20:07:50.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-01T19:56:52.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:21:49.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Cadastro.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroUsuarios\\Cadastro.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\CadastroUsuarios\\Cadastro.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroUsuarios\\Cadastro.cshtml.cs",
+              "RelativeToolTip": "Pages\\CadastroUsuarios\\Cadastro.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T19:17:50.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml.razor",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Shared\\Index.cshtml.razor",
+              "RelativeDocumentMoniker": "Pages\\Shared\\Index.cshtml.razor",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Shared\\Index.cshtml.razor",
+              "RelativeToolTip": "Pages\\Shared\\Index.cshtml.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T23:16:22.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Error.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Error.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Error.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Error.cshtml.cs",
+              "RelativeToolTip": "Pages\\Error.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:05:17.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MeuPontoOnline.dll",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\out\\MeuPontoOnline.dll",
+              "RelativeDocumentMoniker": "out\\MeuPontoOnline.dll",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\out\\MeuPontoOnline.dll",
+              "RelativeToolTip": "out\\MeuPontoOnline.dll",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001697|",
+              "WhenOpened": "2025-04-02T17:06:45.244Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Setor.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Setor.cs",
+              "RelativeDocumentMoniker": "Models\\Setor.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Setor.cs",
+              "RelativeToolTip": "Models\\Setor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:23:26.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Funcionario.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Funcionario.cs",
+              "RelativeDocumentMoniker": "Models\\Funcionario.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Models\\Funcionario.cs",
+              "RelativeToolTip": "Models\\Funcionario.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwCIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:34:35.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Cadastrosetor.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroSetor\\Cadastrosetor.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\CadastroSetor\\Cadastrosetor.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroSetor\\Cadastrosetor.cshtml.cs",
+              "RelativeToolTip": "Pages\\CadastroSetor\\Cadastrosetor.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T21:32:26.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cadastro.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroUsuarios\\Cadastro.cshtml",
+              "RelativeDocumentMoniker": "Pages\\CadastroUsuarios\\Cadastro.cshtml",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroUsuarios\\Cadastro.cshtml",
+              "RelativeToolTip": "Pages\\CadastroUsuarios\\Cadastro.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwCcAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T22:05:43.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Cadastrosetor.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroSetor\\Cadastrosetor.cshtml",
+              "RelativeDocumentMoniker": "Pages\\CadastroSetor\\Cadastrosetor.cshtml",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\CadastroSetor\\Cadastrosetor.cshtml",
+              "RelativeToolTip": "Pages\\CadastroSetor\\Cadastrosetor.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T22:05:26.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Error.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Error.cshtml",
+              "RelativeToolTip": "Pages\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-01T21:32:15.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-01T19:21:22.698Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 382,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{7f40df72-066b-4810-a08b-c0fbed76c948}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Registro\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Registro\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\Pages\\Registro\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Registro\\Index.cshtml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAmwA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T23:02:36.442Z",
+              "EditorCaption": ""
             }
           ]
         }

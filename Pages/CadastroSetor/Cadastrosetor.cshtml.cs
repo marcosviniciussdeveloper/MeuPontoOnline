@@ -1,17 +1,17 @@
-using MeuPontoOnline.Data;
 using MeuPontoOnline.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Supabase;
 
 namespace MeuPontoOnline.Pages.CadastroSetor
 {
     public class CadastroModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly Client _supabase;
 
-        public CadastroModel(AppDbContext context)
+        public CadastroModel(Client supabase)
         {
-            _context = context;
+            _supabase = supabase;
         }
 
         [BindProperty]
@@ -23,14 +23,36 @@ namespace MeuPontoOnline.Pages.CadastroSetor
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-                return Page();
+            try
+            {
+                var existente = await _supabase.From<Setor>().
+                Where(x => x.Nome == NovoSetor.Nome)
+                .Get();
 
-            _context.Setores.Add(NovoSetor);
-            await _context.SaveChangesAsync();
+                if (existente.Models.Count > 0)
+                {
+                    Mensagem = $"Já existe um setor com o nome \"{NovoSetor.Nome}\".";
+                    return Page();
+                }
 
-            Mensagem = "Setor cadastrado com sucesso!";
+                var response = await _supabase.From<Setor>().Insert(NovoSetor);
+
+                if (response.Models.Count > 0)
+                {
+                    Mensagem = "Setor cadastrado com sucesso!";
+                }
+                else
+                {
+                    Mensagem = $"Erro ao cadastrar:{response.ResponseMessage?.Content?.ReadAsStringAsync().Result}";
+                }
+            }
+            catch (Exception ex)
+            {
+                Mensagem = $"Erro inesperado: {ex.Message}";
+            }
+
             return Page();
         }
+
     }
 }
