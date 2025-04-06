@@ -9,10 +9,10 @@ using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
 
 namespace MeuPontoOnline.Models
 {
-    [Table("Funcao")]
+    [Table("funcao")]
     public class Funcao : BaseModel
     {
-        [PrimaryKey("Id")]
+        [PrimaryKey("id")]
      
         public int Id { get; set; }
 

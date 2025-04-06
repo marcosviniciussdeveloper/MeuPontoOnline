@@ -5,18 +5,39 @@
     ViewData["Title"] = "Cadastro de Setor";
 }
 
-<h2>Cadastro de Setor</h2>
+<div class="container mt-5">
+    <div class="card shadow border-0 rounded-4">
+        <div class="card-header bg-primary text-white rounded-top-4">
+            <h4 class="mb-0 d-flex align-items-center">
+                <i class="bi bi-diagram-3-fill me-2 fs-5"></i> Cadastro de Setor
+            </h4>
+        </div>
+        <div class="card-body">
+            <form method="post" novalidate>
+                <div class="form-floating mb-4">
+                    <input asp-for="NovoSetor.Nome" class="form-control" placeholder="Nome do Setor" required autocomplete="off" aria-label="Nome do Setor" />
+                    <label asp-for="NovoSetor.Nome">
+                        <i class="bi bi-building me-1"></i> Nome do Setor
+                    </label>
+                    <span asp-validation-for="NovoSetor.Nome" class="text-danger small"></span>
+                </div>
 
-<form method="post">
-    <div class="form-group">
-        <label>Nome</label>
-        <input asp-for="NovoSetor.Nome" class="form-control" required />
+                <button type="submit" class="btn btn-success w-100 py-2 fw-semibold">
+                    <i class="bi bi-plus-circle me-1"></i> Cadastrar
+                </button>
+            </form>
+
+            @if (!string.IsNullOrEmpty(Model.Mensagem))
+            {
+                <div class="alert alert-success mt-4 d-flex align-items-center" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    <span>@Model.Mensagem</span>
+                </div>
+            }
+        </div>
     </div>
+</div>
 
-    <button type="submit" class="btn btn-primary mt-2">Cadastrar</button>
-</form>
-
-@if (!string.IsNullOrEmpty(Model.Mensagem))
-{
-    <div class="alert alert-success mt-2">@Model.Mensagem</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

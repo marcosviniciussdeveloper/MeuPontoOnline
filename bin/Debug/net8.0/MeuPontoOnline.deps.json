@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "DotNetEnv": "3.1.1",
+          "Newtonsoft.Json": "13.0.3",
           "System.Net.Http": "4.3.4",
           "dotenv.net": "3.2.1",
           "Supabase": "1.1.1"

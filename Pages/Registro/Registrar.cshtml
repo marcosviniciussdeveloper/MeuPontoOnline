@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Registrar Ponto";
+}
+
+<h2 class="mb-4">🕒 Registro de Ponto</h2>
+
+<form method="post" class="border p-4 rounded shadow-sm bg-light">
+    <div class="form-group mb-3">
+        <label asp-for="NomeFuncionario" class="form-label fw-bold">👤 Nome do Funcionário</label>
+        <input asp-for="NomeFuncionario" class="form-control" placeholder="Digite seu nome completo" required />
+        <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="TipoRegistro" class="form-label fw-bold">📝 Tipo de Registro</label>
+        <select asp-for="TipoRegistro" class="form-select" required>
+            <option value="">-- Selecione o tipo de registro --</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Almoço">Saída para Almoço</option>
+            <option value="Retorno">Retorno do Almoço</option>
+            <option value="Saída">Saída</option>
+        </select>
+        <span asp-validation-for="TipoRegistro" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label class="form-label fw-bold">📅 Data e Hora</label>
+        <input class="form-control" value="@DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">✅ Registrar Ponto</button>
+</form>
+
+@if (Model.Mensagem != null)
+{
+    <div class="alert alert-info mt-3">@Model.Mensagem</div>
+}
+
+@if (Model.RegistroSalvo != null)
+{
+    <div class="alert alert-success mt-2">
+        ✅ Registro de <strong>@Model.RegistroSalvo.TipoRegistro</strong> às <strong>@Model.RegistroSalvo.DataHora.ToLocalTime().ToString("HH:mm:ss")</strong> salvo com sucesso.
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

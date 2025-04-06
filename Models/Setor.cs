@@ -1,21 +1,24 @@
-﻿
+﻿using Supabase.Postgrest.Models;
 using Supabase.Postgrest.Attributes;
-using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
-using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
+namespace MeuPontoOnline.Models;
+using Newtonsoft.Json;
 
-namespace MeuPontoOnline.Models
+[Table("setores")]
+public class Setor : BaseModel
 {
-    [Table("setores")]
-    public class Setores
-    {
-        [PrimaryKey("id")] 
-        public int? Id { get; set; }
+    [PrimaryKey("id")]
 
-        [Column("nome")]
-        public string Nome { get; set; } = string.Empty;
+    public int? Id { get; set; }
+
+    [Column("nome")]
+    public string Nome { get; set; } = string.Empty;
+
+    [Column("descricao")]
+    public string? Descricao { get; set; }
 
 
+    [JsonIgnore]
+    public ICollection<Funcionario>? Collection { get; set; }
 
-        public ICollection<Funcionario>? Funcionarios { get; set; }
-    }
+
 }

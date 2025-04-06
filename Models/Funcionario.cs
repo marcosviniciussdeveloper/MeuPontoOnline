@@ -1,8 +1,8 @@
 ﻿
 using Newtonsoft.Json;
-using Supabase.Postgrest;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
 using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
 
@@ -11,20 +11,28 @@ namespace MeuPontoOnline.Models
     [Table("funcionarios")]
     public class Funcionario : BaseModel
     {
-        [PrimaryKey("Id")]
+        [PrimaryKey("id")]
         public int Id { get; set; }
 
         [Column("nome")]
         public string Nome { get; set; } = string.Empty;
 
+        [Column("data_nascimento")] 
+        public DateTime DataNascimento {get; set; }
+
+
+
         [Column("email")]
         public string Email { get; set; } = string.Empty;
+
 
         [Column("senha_hash")]
         public string SenhaHash { get; set; } = string.Empty;
 
-        [Column("codigo_indetificacao")]
-        public string CodigoIndetificacao { get; set; } = string.Empty;
+        
+        [Column("matricula")]
+        public string Matricula { get; set; } = string.Empty;
+
 
         [Column("tipo_contrato")]
         public string TipoContrato { get; set; } = string.Empty;

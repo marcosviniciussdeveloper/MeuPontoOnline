@@ -5647,29 +5647,30 @@
     "net8.0": [
       "AutoMapper >= 14.0.0",
       "DotNetEnv >= 3.1.1",
+      "Newtonsoft.Json >= 13.0.3",
       "System.Net.Http >= 4.3.4",
       "dotenv.net >= 3.2.1",
       "supabase >= 1.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sindauto\\.nuget\\packages\\": {},
+    "C:\\Users\\mv834\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\MeuPontoOnline.csproj",
+      "projectUniqueName": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\MeuPontoOnline.csproj",
       "projectName": "MeuPontoOnline",
-      "projectPath": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\MeuPontoOnline.csproj",
-      "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\obj\\",
+      "projectPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\MeuPontoOnline.csproj",
+      "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5710,6 +5711,10 @@
           "DotNetEnv": {
             "target": "Package",
             "version": "[3.1.1, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.3, )"
           },
           "System.Net.Http": {
             "target": "Package",

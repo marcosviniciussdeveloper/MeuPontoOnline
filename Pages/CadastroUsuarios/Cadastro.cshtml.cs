@@ -75,6 +75,8 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
 
             NovoFuncionario.FuncaoId = funcao.Id;
             NovoFuncionario.SenhaHash = GerarHash(Senha);
+            NovoFuncionario.Matricula = Guid.NewGuid().ToString("N").Substring(0, 6).ToUpper(); // Ex: "A1B2C3"
+
 
             await _supabase
             .From<Funcionario>()

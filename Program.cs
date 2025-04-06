@@ -5,12 +5,17 @@ var config = builder.Configuration.GetSection("Supabase");
 var url = config["Url"];
 var key = config["Key"];
 
+if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
+{
+    throw new ArgumentNullException("Supabase URL e Key não podem ser nulos.");
+}
+
 var options = new Supabase.SupabaseOptions
 {
+    AutoRefreshToken = true,
     AutoConnectRealtime = true
 };
 
-// Registra o cliente Supabase como Singleton no container DI
 builder.Services.AddSingleton(provider =>
 {
     var supabase = new Supabase.Client(url, key, options);
