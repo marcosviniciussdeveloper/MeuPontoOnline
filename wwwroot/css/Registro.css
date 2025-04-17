@@ -1,0 +1,226 @@
+﻿/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(90deg, #182b48 0%, #264d96 100%);
+    margin: 0;
+    overflow-y: scroll;
+}
+
+
+
+
+
+
+/* Container que centraliza apenas o conteúdo */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px); 
+}
+
+/* Contêiner principal */
+.registro-container {
+    max-width: 800px;
+    width: 90%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    -webkit-backdrop-filter: blur(20px);
+
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+
+/* Cabeçalho do registro - AUMENTADO */
+.registro-header {
+    background: linear-gradient(90deg, #182b48 0%, #264d96 100%);
+    padding: 2rem;
+    text-align: center;
+}
+
+    .registro-header h2 {
+        color: aliceblue;
+        margin: 0;
+        font-size: 2.25rem; 
+        font-weight: 600;
+    }
+
+/* Formulário - AUMENTADO */
+.registro-form {
+    padding: 2.1rem; 
+}
+
+.form-group {
+    margin-bottom: 2.1rem; 
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 1.1rem; 
+}
+
+/* Estilização dos inputs com ícones */
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px; 
+    height: 24px; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.matricula-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'/%3E%3C/svg%3E");
+}
+
+.registro-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2'/%3E%3C/svg%3E");
+}
+
+.data-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
+}
+
+/* Campos de formulário - AUMENTADOS */
+.form-control, .form-select {
+    width: 100%;
+    padding: 1rem 1rem 1rem 50px; 
+    font-size: 1.15rem; 
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    height: 60px; 
+}
+
+    .form-control:focus, .form-select:focus {
+        outline: none;
+        border-color: #3182ce;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
+    }
+
+    .form-control[readonly] {
+        background-color: #f7fafc;
+        color: #718096;
+    }
+
+/* Botão de registro */
+.btn-registrar {
+    display: block;
+    width: 100%;
+    padding: 1.15rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(to right, #38a169, #48bb78);
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 65px;
+}
+
+    .btn-registrar:hover:not(:disabled) {
+        background: linear-gradient(to right, #2f855a, #38a169);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    }
+
+    .btn-registrar:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    .btn-registrar:disabled {
+        background: linear-gradient(to right, #a0aec0, #cbd5e0);
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+.mensagem {
+    margin: 0.75rem auto; 
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    text-align: center;
+    max-width: 90%;
+}
+
+
+/* Azul para informações */
+.mensagem.info {
+    background-color: #edf4ff;
+    border-left: 4px solid #3182ce;
+    color: #2b6cb0;
+}
+
+/* Verde para sucesso */
+.mensagem.sucesso {
+    background-color: #e6fff5;
+    border-left: 4px solid #2f855a;
+    color: #276749;
+}
+
+
+.footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    text-align: center;
+    font-size: 0.85rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+    .footer a {
+        color: #60a5fa;
+        text-decoration: none;
+    }
+
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+
+/* Responsividade  */
+@media (max-width: 900px) {
+    .registro-container {
+        width: 95%;
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 650px) {
+    .registro-container {
+        margin: 1rem;
+        width: auto;
+    }
+
+    .registro-header {
+        padding: 1.5rem;
+    }
+
+    .registro-form {
+        padding: 1.5rem;
+    }
+
+    .registro-header h2 {
+        font-size: 1.8rem;
+    }
+}

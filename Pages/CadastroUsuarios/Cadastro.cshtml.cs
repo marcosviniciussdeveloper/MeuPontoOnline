@@ -27,9 +27,7 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
         [BindProperty]
         public string FuncaoNome { get; set; } = string.Empty;
 
-        public List<SelectListItem>
-    ListaDeSetores
-        { get; set; } = new();
+        public List<SelectListItem> ListaDeSetores { get; set; } = new();
 
         public string Mensagem { get; set; } = string.Empty;
 
@@ -38,15 +36,8 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
             await CarregarSetores();
         }
 
-        public async Task<IActionResult>
-            OnPostAsync()
-
-        { 
-
-
-
-
-
+        public async Task<IActionResult> OnPostAsync()
+        {
             if (!ModelState.IsValid)
                 return Page();
 
@@ -56,63 +47,56 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
                 return Page();
             }
 
-            var funcoes = await _supabase
-              .From<Funcao>()
-               .Where(f => f.Nome == FuncaoNome)
+            
+            var matriculaExistente = await _supabase
+                .From<Funcionario>()
+                .Where(f => f.Matricula == NovoFuncionario.Matricula)
                 .Get();
 
+            if (matriculaExistente.Models.Any())
+            {
+                ModelState.AddModelError("NovoFuncionario.Matricula", "Matrícula já existe.");
+                return Page();
+            }
+
+          
+            var funcoes = await _supabase
+                .From<Funcao>()
+                .Where(f => f.Nome == FuncaoNome)
+                .Get();
 
             var funcao = funcoes.Models.FirstOrDefault();
 
             if (funcao == null)
             {
-                funcao = new Funcao { Nome = FuncaoNome };
-                var result = await _supabase.From<Funcao>().Insert(funcao);
-
-                funcao = result.Models.First();
+                var resultado = await _supabase.From<Funcao>().Insert(new Funcao { Nome = FuncaoNome });
+                funcao = resultado.Models.First();
             }
-
 
             NovoFuncionario.FuncaoId = funcao.Id;
             NovoFuncionario.SenhaHash = GerarHash(Senha);
-            NovoFuncionario.Matricula = Guid.NewGuid().ToString("N").Substring(0, 6).ToUpper(); // Ex: "A1B2C3"
 
-
-            await _supabase
-            .From<Funcionario>()
-            .Insert(NovoFuncionario);
-
-
+            await _supabase.From<Funcionario>().Insert(NovoFuncionario);
 
             Mensagem = "Funcionário cadastrado com sucesso!";
-
-
             return Page();
-
         }
-
-
 
         private async Task CarregarSetores()
         {
             var setores = await _supabase.From<Setor>().Get();
-
-            ListaDeSetores = setores.Models.Select(s => new SelectListItem
-            {
-                Text = s.Nome,
-                Value = s.Id.ToString(),
-
-
-            }).ToList();
-
-
+            ListaDeSetores = setores.Models
+                .Select(s => new SelectListItem { Value = s.Id.ToString(), Text = s.Nome })
+                .ToList();
         }
 
-        private string GerarHash(string senha)
+        private static string GerarHash(string senha)
         {
             using var sha256 = SHA256.Create();
-            var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
-            return Convert.ToBase64String(hashBytes);
+            var bytes = Encoding.UTF8.GetBytes(senha);
+            var hash = sha256.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
         }
     }
 }
+   

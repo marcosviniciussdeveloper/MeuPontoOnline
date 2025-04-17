@@ -1,6 +1,8 @@
+using MeuPontoOnline.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Carrega configurações do appsettings.json
+//chama a conexão com o supabase
 var config = builder.Configuration.GetSection("Supabase");
 var url = config["Url"];
 var key = config["Key"];
@@ -9,6 +11,9 @@ if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
 {
     throw new ArgumentNullException("Supabase URL e Key não podem ser nulos.");
 }
+
+
+builder.Services.AddScoped<GeoLocalizacaoService>();
 
 var options = new Supabase.SupabaseOptions
 {
@@ -23,8 +28,12 @@ builder.Services.AddSingleton(provider =>
     return supabase;
 });
 
+
+
+
 // Adiciona Razor Pages
 builder.Services.AddRazorPages();
+
 
 var app = builder.Build();
 

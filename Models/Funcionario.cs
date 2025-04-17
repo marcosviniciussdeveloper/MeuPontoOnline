@@ -1,8 +1,9 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
 using Newtonsoft.Json;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
-using System.ComponentModel.DataAnnotations.Schema;
+
 using ColumnAttribute = Supabase.Postgrest.Attributes.ColumnAttribute;
 using TableAttribute = Supabase.Postgrest.Attributes.TableAttribute;
 
@@ -19,8 +20,6 @@ namespace MeuPontoOnline.Models
 
         [Column("data_nascimento")] 
         public DateTime DataNascimento {get; set; }
-
-
 
         [Column("email")]
         public string Email { get; set; } = string.Empty;
@@ -55,5 +54,10 @@ namespace MeuPontoOnline.Models
 
         [Column("horario_saida")]
         public TimeSpan HorarioSaida { get; set; }
+
+        internal object FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

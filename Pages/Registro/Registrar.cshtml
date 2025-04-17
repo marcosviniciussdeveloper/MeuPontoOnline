@@ -1,50 +1,108 @@
-﻿@page
+﻿@page "/Registrar"
 @model IndexModel
 @{
-    ViewData["Title"] = "Registrar Ponto";
-}
+    ViewData["Title"] = "Registro de Ponto";
+    }
+<link rel="stylesheet" href="/css/navbar.css"/>
+<link rel="stylesheet" href="~/css/Registro.css" />
 
-<h2 class="mb-4">🕒 Registro de Ponto</h2>
+<div class="main-content">
+    <div class="registro-container">
+        <div class="registro-header">
+            <h2>Registro de Ponto</h2>
+        </div>
 
-<form method="post" class="border p-4 rounded shadow-sm bg-light">
-    <div class="form-group mb-3">
-        <label asp-for="NomeFuncionario" class="form-label fw-bold">👤 Nome do Funcionário</label>
-        <input asp-for="NomeFuncionario" class="form-control" placeholder="Digite seu nome completo" required />
-        <span asp-validation-for="NomeFuncionario" class="text-danger"></span>
+        <form method="post" class="registro-form">
+            <div class="form-group">
+                <label asp-for="Matricula" class="form-label">Matrícula do funcionário</label>
+                <div class="input-icon-wrapper">
+                    <span class="input-icon matricula-icon"></span>
+                    <input asp-for="Matricula" class="form-control" placeholder="Digite o número da sua matrícula" required />
+                </div>
+                <span asp-validation-for="Matricula" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TipoRegistro" class="form-label">Tipo de Registro</label>
+                <div class="input-icon-wrapper">
+                    <span class="input-icon registro-icon"></span>
+                    <select asp-for="TipoRegistro" class="form-select" required>
+                        <option value="">-- Selecione o tipo de registro --</option>
+                        <option value="Entrada">Entrada</option>
+                        <option value="Almoço">Saída para Almoço</option>
+                        <option value="Retorno">Retorno do Almoço</option>
+                        <option value="Saída">Saída</option>
+                    </select>
+                </div>
+                <span asp-validation-for="TipoRegistro" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Data e Hora</label>
+                <div class="input-icon-wrapper">
+                    <span class="input-icon data-icon"></span>
+                    <input class="form-control" value="@DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")" readonly />
+                </div>
+                <input type="hidden" id="Lati" name="Latitude" />
+                <input type="hidden" id="Longi" name="Longitude" />
+            </div>
+
+            <button id="btn-registrar" class="btn-registrar" type="submit" disabled>
+                Registrar Ponto
+            </button>
+        </form>
+
+        @if (Model.Mensagem != null)
+        {
+            <div class="mensagem info">@Model.Mensagem</div>
+        }
+
+        @if (Model.RegistroSalvo != null)
+        {
+            <div class="mensagem sucesso">
+                Registro de <strong>@Model.RegistroSalvo.TipoRegistro</strong> às
+                <strong>@Model.RegistroSalvo.DataHora.ToLocalTime().ToString("HH:mm:ss")</strong> salvo com sucesso.
+            </div>
+        }
     </div>
-
-    <div class="form-group mb-3">
-        <label asp-for="TipoRegistro" class="form-label fw-bold">📝 Tipo de Registro</label>
-        <select asp-for="TipoRegistro" class="form-select" required>
-            <option value="">-- Selecione o tipo de registro --</option>
-            <option value="Entrada">Entrada</option>
-            <option value="Almoço">Saída para Almoço</option>
-            <option value="Retorno">Retorno do Almoço</option>
-            <option value="Saída">Saída</option>
-        </select>
-        <span asp-validation-for="TipoRegistro" class="text-danger"></span>
-    </div>
-
-    <div class="form-group mb-4">
-        <label class="form-label fw-bold">📅 Data e Hora</label>
-        <input class="form-control" value="@DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")" readonly />
-    </div>
-
-    <button type="submit" class="btn btn-success w-100">✅ Registrar Ponto</button>
-</form>
-
-@if (Model.Mensagem != null)
-{
-    <div class="alert alert-info mt-3">@Model.Mensagem</div>
-}
-
-@if (Model.RegistroSalvo != null)
-{
-    <div class="alert alert-success mt-2">
-        ✅ Registro de <strong>@Model.RegistroSalvo.TipoRegistro</strong> às <strong>@Model.RegistroSalvo.DataHora.ToLocalTime().ToString("HH:mm:ss")</strong> salvo com sucesso.
-    </div>
-}
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        window.onload = function () {
+            getLocation();
+        };
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocalização não suportada pelo navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            const lati = position.coords.latitude.toFixed(6);
+            const longi = position.coords.longitude.toFixed(6);
+
+            document.getElementById("Lati").value = lati;
+            document.getElementById("Longi").value = longi;
+            document.getElementById("btn-registrar").disabled = false;
+        }
+
+        function showError(error) {
+            alert("Erro ao obter geolocalização: " + error.message);
+        }
+
+        document.querySelector("form").addEventListener("submit", function (e) {
+            const lat = document.getElementById("Lati").value;
+            const lon = document.getElementById("Longi").value;
+
+            if (!lat || !lon || lat === "0" || lon === "0") {
+                e.preventDefault();
+                alert("Aguarde a localização ser carregada antes de registrar o ponto.");
+            }
+        });
+    </script>
 }

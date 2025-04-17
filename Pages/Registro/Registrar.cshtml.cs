@@ -1,8 +1,13 @@
+
 using MeuPontoOnline.Models;
+using MeuPontoOnline.Pages.Login;
+using MeuPontoOnline.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Supabase;
 using Supabase.Postgrest.Exceptions;
+
+
 
 namespace MeuPontoOnline.Pages.Registro;
 
@@ -10,19 +15,31 @@ public class IndexModel : PageModel
 {
     private readonly Client _supabase;
 
-    public IndexModel(Client supabase)
+    private readonly GeoLocalizacaoService _geoService;
+
+    public IndexModel(Client supabase, GeoLocalizacaoService geoLocalizacaoService)
     {
         _supabase = supabase;
+        _geoService = geoLocalizacaoService;
     }
 
     [BindProperty]
     public string? TipoRegistro { get; set; }
 
     [BindProperty]
-    public string? NomeFuncionario { get; set; }
+    public double Latitude { get; set; }
 
+    [BindProperty]
+    public double Longitude { get; set; }
+
+    [BindProperty]
+    public string? Matricula { get; set; }
+
+    [BindProperty]
+    public int FuncionarioId { get; set; }
     public RegistroPonto? RegistroSalvo { get; set; }
     public string? Mensagem { get; set; }
+    public string MensagemErro { get; private set; }
 
     public async Task<IActionResult> OnPostAsync()
     {
@@ -32,28 +49,63 @@ public class IndexModel : PageModel
             return Page();
         }
 
-        if (string.IsNullOrWhiteSpace(NomeFuncionario))
-        {
-            Mensagem = "Informe o nome do funcionário.";
-            return Page();
-        }
-
         try
         {
-            var funcionario = await BuscarFuncionarioPorNome(NomeFuncionario.Trim());
+           var matricula = User.FindFirst("Matricula")?.Value;
 
-            if (funcionario == null)
+           var funcionario = User.FindFirst("Funcionario")?.Value;
+
+           if (funcionario == null)
+           {
+              Mensagem = "Funcionário com esta matrícula não encontrado.";
+              return Page();
+           }
+
+
+            var usuarioLogado = await _supabase
+                .From<Funcionario>()
+                .Where(x => x.Matricula == Matricula)
+                .Get();
+
+            if (funcionario.Matricula != Matricula)
             {
-                Mensagem = "Funcionário não encontrado.";
+                MensagemErro = "Você não tem permissão para bater o ponto de outro funcionário.";
                 return Page();
             }
 
+
+
+            var hoje = DateTime.UtcNow.Date;
+            var amanha = hoje.AddDays(1);
+
+            var registros = await _supabase
+                .From<RegistroPonto>()
+                .Where(x => x.FuncionarioId == funcionario.Id)
+                .Where(x => x.DataHora >= hoje)
+                .Where(x => x.DataHora <= amanha)
+                .Where(x => x.TipoRegistro == TipoRegistro)
+                .Get();
+
+            if (registros.Models.Any())
+            {
+                Mensagem = $"Já existe um registro de ponto '{TipoRegistro}' para o funcionário {funcionario.Nome} no dia de hoje.";
+                return Page();
+            }
+
+
+
+
+            var enderecoCompleto = await _geoService.ObterEnderecoAsync(Latitude, Longitude);
+
             var novoRegistro = new RegistroPonto
-            {   
+            {
                 FuncionarioId = funcionario.Id,
                 TipoRegistro = TipoRegistro!,
                 DataHora = DateTime.UtcNow,
-                Observacao = ""
+                Observacao = "",
+                Latitude = Latitude,
+                Longitude = Longitude,
+                EnderecoCompleto = enderecoCompleto,
             };
 
             var resposta = await _supabase
@@ -61,7 +113,8 @@ public class IndexModel : PageModel
                 .Insert(novoRegistro);
 
             RegistroSalvo = resposta.Models.FirstOrDefault();
-            Mensagem = $"Registro '{TipoRegistro}' feito às {novoRegistro.DataHora.ToLocalTime():HH:mm:ss}.";
+
+            Mensagem = $"Registro '{TipoRegistro}' feito às {novoRegistro.DataHora.ToLocalTime():HH:mm:ss} em {enderecoCompleto}.";
             return Page();
         }
         catch (PostgrestException pgEx)
@@ -76,13 +129,4 @@ public class IndexModel : PageModel
         }
     }
 
-    private async Task<Funcionario?> BuscarFuncionarioPorNome(string nome)
-    {
-        var resultado = await _supabase
-            .From<Funcionario>()
-            .Where(x => x.Nome == nome)
-            .Get();
-
-        return resultado.Models.FirstOrDefault();
-    }
 }
