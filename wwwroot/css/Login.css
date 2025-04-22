@@ -1,15 +1,17 @@
-﻿/* Background styling */
+﻿/* Estilos gerais - Fundo com gradiente igual ao do registro */
 body {
-    background-color: #1a3763;
-    background-image: linear-gradient(to right, #1a3763, #2a4980);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(90deg, #182b48 0%, #264d96 100%);
     min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    position: relative;
+    
 }
 
-/* Main container styling */
+/* Container principal centralizado */
 .container {
     max-width: 600px;
     width: 90%;
@@ -18,129 +20,179 @@ body {
     flex: 1;
 }
 
-/* Card styling */
+/* Estilização do card de login */
 .card {
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 12px; /* Borda arredondada igual ao registro */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Sombra igual ao registro */
     overflow: hidden;
     border: none;
     background-color: white;
     width: 100%;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
 
-/* Header styling */
+/* Estilização do cabeçalho do card */
 .card-header {
-    background: #0d6efd;
+    background: linear-gradient(90deg, #182b48 0%, #264d96 100%); /* Gradiente igual ao do registro */
     color: white;
-    padding: 1.25rem;
+    padding: 1.5rem;
     text-align: center;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 2rem; /* Tamanho igual ao do registro */
+    font-weight: 600;
     border: none;
 }
 
-/* Card body styling */
+/* Corpo do card de login */
 .card-body {
-    padding: 2.5rem;
+    padding: 1.5rem; /* Padding igual ao do registro */
     background-color: white;
 }
 
-/* Form elements styling */
+/* Grupos de formulário */
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem; /* Margem igual ao do registro */
 }
 
+/* Rótulos do formulário */
 .form-label {
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: #444;
     display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #4a5568; /* Cor igual ao do registro */
     font-size: 1.1rem;
 }
 
+/* Campos de formulário */
 .form-control {
-    padding: 0.875rem 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
     width: 100%;
-    font-size: 1.1rem;
-    transition: border-color 0.2s;
+    padding: 0.75rem 1rem;
+    font-size: 1.15rem;
+    border: 1px solid #e2e8f0; /* Cor da borda igual ao do registro */
+    border-radius: 20px; /* Borda arredondada igual ao registro */
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    height: 55px; /* Altura igual ao do registro */
 }
 
     .form-control:focus {
-        border-color: #0d6efd;
-        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-        outline: 0;
+        outline: none;
+        border-color: #3182ce; /* Cor de foco igual ao do registro */
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3); /* Sombra de foco igual ao do registro */
     }
 
-/* Button styling */
+/* Estilização do botão principal */
 .btn-primary {
-    background-color: #0d6efd;
-    border: none;
-    padding: 1rem;
-    font-weight: 500;
-    border-radius: 4px;
+    display: block;
     width: 100%;
+    padding: 1.15rem;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: white;
+    background: linear-gradient(to right, #38a169, #48bb78); /* Gradiente igual ao botão de registro */
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
-    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 60px; /* Altura igual ao do registro */
 }
 
     .btn-primary:hover {
-        background-color: #0b5ed7;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to right, #2f855a, #38a169); /* Gradiente de hover igual ao registro */
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .btn-primary:active {
         transform: translateY(0);
     }
 
-/* Alert styles */
+/* Alertas e mensagens */
 .alert {
+    margin: 0.75rem auto;
     padding: 0.75rem 1rem;
-    border-radius: 4px;
-    margin-top: 1rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    text-align: center;
+    max-width: 90%;
 }
 
 .alert-danger {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
+    background-color: #feeeed;
+    border-left: 4px solid #e53e3e;
+    color: #c53030;
 }
 
-/* Icon styling */
+/* Ícones alinhados com texto */
 .bi {
     margin-right: 0.5rem;
 }
 
-/* Validation messages */
+/* Mensagens de validação */
 .text-danger {
-    color: #dc3545;
+    color: #e53e3e; /* Vermelho alinhado com a paleta */
     font-size: 0.875rem;
     margin-top: 0.25rem;
     display: block;
 }
 
-/* Footer styling */
+/* Estilização do footer */
 footer {
-    padding: 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
+ 
+    background: linear-gradient(90deg, #182b48 0%, #264d96 100%);
+    color: whitesmoke;
     text-align: center;
-    font-size: 0.875rem;
-    margin-top: auto;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    padding: 8px 0px;
+    height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+    footer a {
+        color: #60a5fa;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Responsividade para diferentes tamanhos de tela */
+@media (max-width: 900px) {
     .container {
-        padding: 3rem 1rem;
+        width: 95%;
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        padding-top: 2rem;
         width: 95%;
     }
 
+    .card-header {
+        font-size: 1.8rem; /* Tamanho reduzido para mobile igual ao registro */
+    }
+
     .card-body {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    /* Garantir espaçamento adequado no mobile */
+    body {
+        padding-bottom: 50px;
     }
 }

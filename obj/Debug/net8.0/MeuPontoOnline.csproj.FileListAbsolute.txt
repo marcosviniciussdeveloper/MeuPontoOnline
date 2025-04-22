@@ -281,3 +281,8 @@ C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\bin\Debug\net8.0\System.Net.Http.Jso
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\Sindauto\Desktop\MeuPontoOnlineDev\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\bin\Debug\net8.0\System.Net.Http.Json.dll
+C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\bin\Debug\net8.0\System.Text.Encodings.Web.dll
+C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\mv834\Desktop\Sistema_de_ponto\MeuPontoOnline\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll

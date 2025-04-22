@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.IdentityModel.Tokens;
 using Supabase;
 
 namespace MeuPontoOnline.Pages.Login
@@ -40,7 +39,6 @@ namespace MeuPontoOnline.Pages.Login
 
             var funcionario = result.Models.FirstOrDefault();
 
-
             if (funcionario == null)
             {
                 MensagemErro = "Funcionário não encontrado.";
@@ -62,6 +60,11 @@ namespace MeuPontoOnline.Pages.Login
                 MensagemErro = "Senha ou matrícula inválida.";
                 return Page();
             }
+
+            await SignInUserAsync(funcionario);
+
+            
+            return RedirectToPage("/Registro/Registrar");
         }
 
         private async Task SignInUserAsync(Funcionario funcionario)

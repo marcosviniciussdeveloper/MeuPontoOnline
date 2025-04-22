@@ -1,0 +1,228 @@
+﻿/* Reset e Estilos Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Layout de Tela Cheia */
+.full-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f5f7fa;
+}
+
+.full-page-header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+    .full-page-header h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+.full-page-form {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    width: 100%;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+/* Layout do Formulário */
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+/* Estilos dos Campos */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+    font-size: 1rem;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 3rem;
+    font-size: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+    .form-input:focus,
+    .form-select:focus {
+        outline: none;
+        border-color: #3182ce;
+        box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+        background-color: white;
+    }
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+}
+
+/* Botão de Envio */
+.form-actions {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(30, 60, 114, 0.3);
+}
+
+    .btn-submit:hover {
+        background: linear-gradient(135deg, #172b4d 0%, #223a75 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(30, 60, 114, 0.4);
+    }
+
+    .btn-submit:active {
+        transform: translateY(0);
+    }
+
+/* Mensagens */
+.mensagem {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+    .mensagem.info {
+        background-color: #ebf8ff;
+        border-left: 4px solid #3182ce;
+        color: #2b6cb0;
+    }
+
+    .mensagem.sucesso {
+        background-color: #f0fff4;
+        border-left: 4px solid #38a169;
+        color: #276749;
+    }
+
+    .mensagem i {
+        font-size: 1.2rem;
+    }
+
+/* Validação */
+.text-danger {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+/* Rodapé */
+.full-page-footer {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .full-page-form {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .btn-submit {
+        max-width: 100%;
+    }
+}

@@ -1,106 +1,115 @@
 ﻿@page "/Cadastro"
 @model MeuPontoOnline.Pages.CadastroUsuarios.CadastroModel
-@using Microsoft.AspNetCore.Mvc.Rendering
-
-@{
-	ViewData["Title"] = "Cadastro de Funcionário";
-}
-
-<div class="container mt-5">
-	<div class="card shadow-sm border-0">
-		<div class="card-header bg-dark text-white">
-			<h4 class="mb-0">
-				<i class="bi bi-person-plus-fill me-2"></i> Cadastro de Funcionário
-			</h4>
-		</div>
-		<div class="card-body">
-			<form method="post">
-				<div asp-validation-summary="All" class="text-danger mb-3"></div>
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-person-fill me-1"></i> Nome
-					</label>
-					<input asp-for="NovoFuncionario.Nome" class="form-control" required placeholder="Nome completo" />
-					<span asp-validation-for="NovoFuncionario.Nome" class="text-danger"></span>
-				</div>
-
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-card-list me-1"></i> Matrícula
-					</label>
-					<input asp-for="NovoFuncionario.Matricula" class="form-control" required placeholder="Digite a matrícula do funcionário" />
-					<span asp-validation-for="NovoFuncionario.Matricula" class="text-danger"></span>
-				</div>
-
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-calendar-event me-1"></i> Data de Nascimento
-					</label>
-					<input asp-for="NovoFuncionario.DataNascimento" class="form-control" type="date" required />
-					<span asp-validation-for="NovoFuncionario.DataNascimento" class="text-danger"></span>
-				</div>
-
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-briefcase-fill me-1"></i> Tipo de Contrato
-					</label>
-					<input asp-for="NovoFuncionario.TipoContrato" class="form-control" placeholder="CLT, Estágio, etc." />
-					<span asp-validation-for="NovoFuncionario.TipoContrato" class="text-danger"></span>
-				</div>
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-diagram-3-fill me-1"></i> Setor
-					</label>
-					<select asp-for="NovoFuncionario.SetorId" asp-items="Model.ListaDeSetores" class="form-control">
-						<option value="">-- Selecione o Setor --</option>
-					</select>
-					<span asp-validation-for="NovoFuncionario.SetorId" class="text-danger"></span>
-				</div>
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-gear-fill me-1"></i> Função
-					</label>
-					<input asp-for="FuncaoNome" class="form-control" required placeholder="Digite o nome da função" />
-					<span asp-validation-for="FuncaoNome" class="text-danger"></span>
-				</div>
-
-				<div class="form-group mb-3">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-envelope-fill me-1"></i> Email
-					</label>
-					<input asp-for="NovoFuncionario.Email" class="form-control" type="email" required placeholder="exemplo@email.com" />
-					<span asp-validation-for="NovoFuncionario.Email" class="text-danger"></span>
-				</div>
-
-				<div class="form-group mb-4">
-					<label class="form-label fw-semibold">
-						<i class="bi bi-lock-fill me-1"></i> Senha
-					</label>
-					<input asp-for="Senha" class="form-control" type="password" required placeholder="Crie uma senha segura" />
-					<span asp-validation-for="Senha" class="text-danger"></span>
-				</div>
-
-				<button type="submit" class="btn btn-success w-100">
-					<i class="bi bi-check-circle me-1"></i> Cadastrar Funcionário
-				</button>
-			</form>
-
-			@if (Model.Mensagem != null)
-			{
-				<div class="alert alert-success mt-3">
-					<i class="bi bi-check-circle-fill me-1"></i> @Model.Mensagem
-				</div>
-			}
-		</div>
-	</div>
-</div>
-
-@section Scripts {
-	<partial name="_ValidationScriptsPartial" />
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Funcionário</title>
+    <link rel="stylesheet" href="/css/Funcionario.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <div class="full-page-container">
+        <div class="full-page-header">
+            <h1>Cadastro de Funcionário</h1>
+        </div>
+        <div class="full-page-form">
+            <form method="post" class="form-container">
+                <div asp-validation-summary="All" class="mensagem info"></div>
+                <div class="form-grid">
+                    <!-- Linha 1 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.Nome" class="form-label">Nome completo</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input asp-for="NovoFuncionario.Nome" class="form-input" placeholder="Digite seu nome completo" value="Marcos Vinicius" />
+                            </div>
+                            <span asp-validation-for="NovoFuncionario.Nome" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.DataNascimento" class="form-label">Data de Nascimento</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar input-icon"></i>
+                                <input asp-for="NovoFuncionario.DataNascimento" class="form-input" type="date" value="2002-04-21" />
+                            </div>
+                            <span asp-validation-for="NovoFuncionario.DataNascimento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Linha 2 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.Matricula" class="form-label">Matrícula</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-id-card input-icon"></i>
+                                <input asp-for="NovoFuncionario.Matricula" class="form-input" placeholder="Digite a matrícula" />
+                            </div>
+                            <span asp-validation-for="NovoFuncionario.Matricula" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.TipoContrato" class="form-label">Tipo de Contrato</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-briefcase input-icon"></i>
+                                <input asp-for="NovoFuncionario.TipoContrato" class="form-input" placeholder="CLT, Estágio, etc." />
+                            </div>
+                            <span asp-validation-for="NovoFuncionario.TipoContrato" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Linha 3 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.Funcao" class="form-label">Função</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user-tie input-icon"></i>
+                                <input asp-for="FuncaoNome" class="form-input" placeholder="Ex: Analista, Técnico" />
+                                <span asp-validation-for="FuncaoNome" class="text-danger"></span>
+                            </div>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NovoFuncionario.SetorId" class="form-label">Setor</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-building input-icon"></i>
+                                <select asp-for="NovoFuncionario.SetorId" asp-items="Model.ListaDeSetores" class="form-select">
+                                    <option value="">-- Selecione o Setor --</option>
+                                </select>
+                            </div>
+                            <span asp-validation-for="NovoFuncionario.SetorId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- Linha 4 - Campo de Senha -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label asp-for="Senha" class="form-label">Senha</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input asp-for="Senha" class="form-input" type="password" placeholder="Crie uma senha segura" />
+                            </div>
+                            <span asp-validation-for="Senha" class="text-danger">The Senha field is required.</span>
+                        </div>
+                        <!-- Espaço vazio para manter o grid -->
+                        <div class="form-group"></div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Cadastrar Funcionário</button>
+                </div>
+                @if (Model.Mensagem != null)
+                {
+                    <div class="mensagem sucesso">
+                        <i class="fas fa-check-circle"></i>
+                        <span>@Model.Mensagem</span>
+                    </div>
+                }
+            </form>
+        </div>
+        <div class="full-page-footer">
+            © 2025 - MeuPontoOnline. Todos os direitos reservados. Termos de Uso
+        </div>
+    </div>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>

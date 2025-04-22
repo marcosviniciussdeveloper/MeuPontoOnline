@@ -1,3 +1,4 @@
+wwwroot\css\Funcionario.css
 wwwroot\css\home.css
 wwwroot\css\Login.css
 wwwroot\css\navbar.css

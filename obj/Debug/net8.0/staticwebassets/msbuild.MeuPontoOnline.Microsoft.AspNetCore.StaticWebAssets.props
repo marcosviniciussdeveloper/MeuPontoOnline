@@ -1,5 +1,23 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Funcionario.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MeuPontoOnline</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MeuPontoOnline</BasePath>
+      <RelativePath>css/Funcionario.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>f85uk71wjo</Fingerprint>
+      <Integrity>/5WKh8uULVJaO9YCZ1jdw2YytDY3S40mBNd8Bv03ppE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Funcionario.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\home.css'))">
       <SourceType>Package</SourceType>
       <SourceId>MeuPontoOnline</SourceId>
@@ -30,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cbbwyvbzj5</Fingerprint>
-      <Integrity>uFAoy+YWYXLtQ78S2+apftLvl7Urcu1j57gJckx2TJQ=</Integrity>
+      <Fingerprint>7fd7h53msl</Fingerprint>
+      <Integrity>TStrpzMDumWBoYmOsUb+Zsk2hAavERX9U/ziwxvOae4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Login.css'))</OriginalItemSpec>
@@ -48,8 +66,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>mjigrmztg5</Fingerprint>
-      <Integrity>4kTqtSkswj9RVt0vBwOIHEIhRZtaiJuvQyQk+mlSuiE=</Integrity>
+      <Fingerprint>mecwp3yhin</Fingerprint>
+      <Integrity>zgsoXtym5EhxTyvdgBFyVN612KZ+xnec/tEhLO73qZQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\navbar.css'))</OriginalItemSpec>
@@ -66,8 +84,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>evxn9k2co4</Fingerprint>
-      <Integrity>xlsyuk4sc/bjmikrXPWYqTIXidJRXkEA3mgRJ6NC/Oo=</Integrity>
+      <Fingerprint>5r0txz129m</Fingerprint>
+      <Integrity>EWYzgxvhGk8WyTBpq3FxX/iIAAhOI6o17tZONKVvWf4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Registro.css'))</OriginalItemSpec>

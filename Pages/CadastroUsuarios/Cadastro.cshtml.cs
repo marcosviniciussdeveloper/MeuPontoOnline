@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Supabase;
-
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -31,13 +31,18 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
 
         public string Mensagem { get; set; } = string.Empty;
 
-        public async Task OnGetAsync()
+       
+        public async Task<IActionResult> OnGetAsync()
         {
+           
             await CarregarSetores();
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            await CarregarSetores();
+
             if (!ModelState.IsValid)
                 return Page();
 
@@ -47,7 +52,6 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
                 return Page();
             }
 
-            
             var matriculaExistente = await _supabase
                 .From<Funcionario>()
                 .Where(f => f.Matricula == NovoFuncionario.Matricula)
@@ -59,7 +63,6 @@ namespace MeuPontoOnline.Pages.CadastroUsuarios
                 return Page();
             }
 
-          
             var funcoes = await _supabase
                 .From<Funcao>()
                 .Where(f => f.Nome == FuncaoNome)

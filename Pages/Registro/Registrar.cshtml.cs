@@ -51,29 +51,32 @@ public class IndexModel : PageModel
 
         try
         {
-           var matricula = User.FindFirst("Matricula")?.Value;
+            var matricula = User.FindFirst("Matricula")?.Value;
 
-           var funcionario = User.FindFirst("Funcionario")?.Value;
-
-           if (funcionario == null)
-           {
-              Mensagem = "Funcionário com esta matrícula não encontrado.";
-              return Page();
-           }
-
+            if (matricula == null)
+            {
+                Mensagem = "Funcionário com esta matrícula não encontrado.";
+                return Page();
+            }
 
             var usuarioLogado = await _supabase
                 .From<Funcionario>()
-                .Where(x => x.Matricula == Matricula)
+                .Where(x => x.Matricula == matricula)
                 .Get();
+
+            var funcionario = usuarioLogado.Models.FirstOrDefault();
+
+            if (funcionario == null)
+            {
+                Mensagem = "Funcionário com esta matrícula não encontrado.";
+                return Page();
+            }
 
             if (funcionario.Matricula != Matricula)
             {
                 MensagemErro = "Você não tem permissão para bater o ponto de outro funcionário.";
                 return Page();
             }
-
-
 
             var hoje = DateTime.UtcNow.Date;
             var amanha = hoje.AddDays(1);
@@ -91,9 +94,6 @@ public class IndexModel : PageModel
                 Mensagem = $"Já existe um registro de ponto '{TipoRegistro}' para o funcionário {funcionario.Nome} no dia de hoje.";
                 return Page();
             }
-
-
-
 
             var enderecoCompleto = await _geoService.ObterEnderecoAsync(Latitude, Longitude);
 

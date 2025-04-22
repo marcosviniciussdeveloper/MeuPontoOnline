@@ -3,56 +3,55 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: linear-gradient(90deg, #182b48 0%, #264d96 100%);
     margin: 0;
-    overflow-y: scroll;
+    padding-bottom: 60px; 
+    min-height: 100vh;
+    position: relative;
 }
 
-
-
-
-
-
-/* Container que centraliza apenas o conteúdo */
+/* Container que centraliza o conteúdo */
 .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 80px); 
+    min-height: calc(100vh - 60px); 
+    padding: 30px 0;
+    box-sizing: border-box;
 }
 
 /* Contêiner principal */
 .registro-container {
-    max-width: 800px;
-    width: 90%;
+    max-width: 700px;
+    width: 80%;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     -webkit-backdrop-filter: blur(20px);
-
     backdrop-filter: blur(20px);
     overflow: hidden;
+    margin: 20px 0;
 }
 
-/* Cabeçalho do registro - AUMENTADO */
+/* Cabeçalho do registro */
 .registro-header {
     background: linear-gradient(90deg, #182b48 0%, #264d96 100%);
-    padding: 2rem;
+    padding: 1.5rem;
     text-align: center;
 }
 
     .registro-header h2 {
         color: aliceblue;
         margin: 0;
-        font-size: 2.25rem; 
+        font-size: 2rem;
         font-weight: 600;
     }
 
-/* Formulário - AUMENTADO */
+/* Formulário */
 .registro-form {
-    padding: 2.1rem; 
+    padding: 1.5rem;
 }
 
 .form-group {
-    margin-bottom: 2.1rem; 
+    margin-bottom: 1.5rem;
 }
 
 .form-label {
@@ -60,7 +59,7 @@ body {
     margin-bottom: 0.75rem;
     font-weight: 600;
     color: #4a5568;
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
 }
 
 /* Estilização dos inputs com ícones */
@@ -70,11 +69,11 @@ body {
 
 .input-icon {
     position: absolute;
-    left: 16px; 
+    left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    width: 24px; 
-    height: 24px; 
+    width: 24px;
+    height: 24px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -92,16 +91,16 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234a5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E");
 }
 
-/* Campos de formulário - AUMENTADOS */
+/* Campos de formulário */
 .form-control, .form-select {
     width: 100%;
-    padding: 1rem 1rem 1rem 50px; 
-    font-size: 1.15rem; 
+    padding: 0.75rem 0.75rem 0.75rem 45px;
+    font-size: 1.15rem;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
     transition: all 0.2s ease;
     box-sizing: border-box;
-    height: 60px; 
+    height: 55px;
 }
 
     .form-control:focus, .form-select:focus {
@@ -125,17 +124,17 @@ body {
     color: white;
     background: linear-gradient(to right, #38a169, #48bb78);
     border: none;
-    border-radius: 8px; 
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    height: 65px;
+    height: 55px;
 }
 
     .btn-registrar:hover:not(:disabled) {
         background: linear-gradient(to right, #2f855a, #38a169);
         transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
     .btn-registrar:active:not(:disabled) {
@@ -147,8 +146,9 @@ body {
         cursor: not-allowed;
         opacity: 0.7;
     }
+
 .mensagem {
-    margin: 0.75rem auto; 
+    margin: 0.75rem auto;
     padding: 0.75rem 1rem;
     border-radius: 10px;
     font-size: 0.85rem;
@@ -159,46 +159,57 @@ body {
     max-width: 90%;
 }
 
+    /* Azul para informações */
+    .mensagem.info {
+        background-color: #edf4ff;
+        border-left: 4px solid #3182ce;
+        color: #2b6cb0;
+    }
 
-/* Azul para informações */
-.mensagem.info {
-    background-color: #edf4ff;
-    border-left: 4px solid #3182ce;
-    color: #2b6cb0;
-}
+    /* Verde para sucesso */
+    .mensagem.sucesso {
+        background-color: #e6fff5;
+        border-left: 4px solid #2f855a;
+        color: #276749;
+    }
 
-/* Verde para sucesso */
-.mensagem.sucesso {
-    background-color: #e6fff5;
-    border-left: 4px solid #2f855a;
-    color: #276749;
-}
-
-
+/* Footer positioning and style fixes */
 .footer {
     background-color: #0f172a;
     color: #e2e8f0;
     text-align: center;
-    font-size: 0.85rem;
-    position: absolute;
+    font-size: 0.75rem;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    left: 0;
+    padding: 10px;
+    height: 40px; /* Reduced height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+    .footer .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
 
     .footer a {
         color: #60a5fa;
         text-decoration: none;
     }
 
-
         .footer a:hover {
             text-decoration: underline;
         }
 
-
-/* Responsividade  */
+/* Responsividade */
 @media (max-width: 900px) {
     .registro-container {
         width: 95%;
@@ -222,5 +233,14 @@ body {
 
     .registro-header h2 {
         font-size: 1.8rem;
+    }
+
+    /* Ensure proper spacing on mobile */
+    body {
+        padding-bottom: 50px;
+    }
+
+    .main-content {
+        padding: 15px 0;
     }
 }
