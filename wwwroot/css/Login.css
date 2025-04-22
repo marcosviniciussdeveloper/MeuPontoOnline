@@ -5,26 +5,40 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
+    min-height: 100vh;
     flex-direction: column;
     position: relative;
-    
 }
 
-/* Container principal centralizado */
-.container {
-    max-width: 600px;
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 5rem;
-    flex: 1;
+
+.login-wrapper {
+    position: absolute;
+   justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+
+
+
 
 /* Estilização do card de login */
 .card {
-    border-radius: 12px; /* Borda arredondada igual ao registro */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Sombra igual ao registro */
+    border-radius: 12px; 
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     overflow: hidden;
+    justify-content: center;
     border: none;
     background-color: white;
     width: 100%;
@@ -34,24 +48,24 @@ body {
 
 /* Estilização do cabeçalho do card */
 .card-header {
-    background: linear-gradient(90deg, #182b48 0%, #264d96 100%); /* Gradiente igual ao do registro */
+    background: linear-gradient(90deg, #182b48 0%, #264d96 100%); 
     color: white;
     padding: 1.5rem;
     text-align: center;
-    font-size: 2rem; /* Tamanho igual ao do registro */
+    font-size: 2rem; 
     font-weight: 600;
     border: none;
 }
 
 /* Corpo do card de login */
 .card-body {
-    padding: 1.5rem; /* Padding igual ao do registro */
+    padding: 1.5rem; 
     background-color: white;
 }
 
 /* Grupos de formulário */
 .form-group {
-    margin-bottom: 1.5rem; /* Margem igual ao do registro */
+    margin-bottom: 1.5rem; 
 }
 
 /* Rótulos do formulário */
@@ -59,7 +73,7 @@ body {
     display: block;
     margin-bottom: 0.75rem;
     font-weight: 600;
-    color: #4a5568; /* Cor igual ao do registro */
+    color: #4a5568; 
     font-size: 1.1rem;
 }
 
@@ -68,17 +82,17 @@ body {
     width: 100%;
     padding: 0.75rem 1rem;
     font-size: 1.15rem;
-    border: 1px solid #e2e8f0; /* Cor da borda igual ao do registro */
-    border-radius: 20px; /* Borda arredondada igual ao registro */
+    border: 1px solid #e2e8f0; 
+    border-radius: 20px; 
     transition: all 0.2s ease;
     box-sizing: border-box;
-    height: 55px; /* Altura igual ao do registro */
+    height: 55px; 
 }
 
     .form-control:focus {
         outline: none;
-        border-color: #3182ce; /* Cor de foco igual ao do registro */
-        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3); /* Sombra de foco igual ao do registro */
+        border-color: #3182ce; 
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3); 
     }
 
 /* Estilização do botão principal */
@@ -89,13 +103,13 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
-    background: linear-gradient(to right, #38a169, #48bb78); /* Gradiente igual ao botão de registro */
+    background: linear-gradient(90deg, #182b48 0%, #264d96 100%);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    height: 60px; /* Altura igual ao do registro */
+    height: 62px;
 }
 
     .btn-primary:hover {
@@ -107,6 +121,8 @@ body {
     .btn-primary:active {
         transform: translateY(0);
     }
+
+
 
 /* Alertas e mensagens */
 .alert {
@@ -184,7 +200,7 @@ footer {
     }
 
     .card-header {
-        font-size: 1.8rem; /* Tamanho reduzido para mobile igual ao registro */
+        font-size: 1.8rem;
     }
 
     .card-body {

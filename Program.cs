@@ -28,7 +28,6 @@ builder.Services.AddSingleton(provider =>
     return supabase;
 });
 
-// Aqui adiciona autenticação e autorização
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {

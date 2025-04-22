@@ -5891,23 +5891,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mv834\\.nuget\\packages\\": {},
+    "C:\\Users\\Sindauto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\MeuPontoOnline.csproj",
+      "projectUniqueName": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\MeuPontoOnline.csproj",
       "projectName": "MeuPontoOnline",
-      "projectPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\MeuPontoOnline.csproj",
-      "packagesPath": "C:\\Users\\mv834\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mv834\\Desktop\\Sistema_de_ponto\\MeuPontoOnline\\obj\\",
+      "projectPath": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\MeuPontoOnline.csproj",
+      "packagesPath": "C:\\Users\\Sindauto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sindauto\\Desktop\\MeuPontoOnlineDev\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mv834\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sindauto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

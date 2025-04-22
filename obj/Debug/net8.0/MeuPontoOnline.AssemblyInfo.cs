@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MeuPontoOnline")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bc254e08be261dc5cf1fba238f42f721c9fa498")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f579994a49689a448f0939b714e3d866e99c0f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MeuPontoOnline")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MeuPontoOnline")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
